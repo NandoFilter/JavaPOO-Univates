@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d78465e6-dfd7-4cfb-a2c1-13d5d4df82d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaPOO-Univates/br/univates/poo_2021a/pratica04/ProgramaCaixaDAgua.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaPOO-Univates/br/univates/poo_2021a/pratica04/ProgramaCaixaDAgua.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
-  <component name="RunManager" selected="Application.ProgramaCaixaDAgua">
+  <component name="RunManager" selected="Application.ProgramaTelevisor">
     <configuration name="ProgramaCaixaDAgua" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.univates.poo_2021a.pratica04.ProgramaCaixaDAgua" />
       <module name="JavaPOO-Univates" />
@@ -63,6 +64,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProgramaTelevisor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.univates.poo_2021a.pratica04.ProgramaTelevisor" />
+      <module name="JavaPOO-Univates" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.univates.poo_2021a.pratica04.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProgramaTrianguloV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.univates.poo_2021a.pratica03.ProgramaTrianguloV2" />
       <module name="JavaPOO-Univates" />
@@ -76,21 +90,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProgramaTelevisor" />
         <item itemvalue="Application.ProgramaCaixaDAgua" />
         <item itemvalue="Application.ProgramaOnibus" />
         <item itemvalue="Application.ProgramaTrianguloV2" />
@@ -106,6 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615043015206</updated>
       <workItem from="1615043016427" duration="1005000" />
+      <workItem from="1615078731996" duration="468000" />
     </task>
     <servers />
   </component>
