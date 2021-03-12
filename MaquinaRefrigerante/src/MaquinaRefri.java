@@ -52,11 +52,15 @@ public class MaquinaRefri {
         if(this.qntdXarope[sabor] >= (5 * aux) && getQntdAgua() >= (95 * aux) && getQntdGas() >= (5 * aux)) {
             if (getCopo() >= 0 && getCopo() < getTamCopo()) {
 
+                this.qntdXarope[sabor] -= (5 * aux);
+                setQntdAgua(getQntdAgua() - (95 * aux));
+                setQntdGas(getQntdGas() - (5 * aux));
+
                 setCopo(getTamCopo());
                 System.out.println("------------------");
                 System.out.println("Copo abastecido com sucesso");
 
-            } else if (getCopo() >= 100) {
+            } else if (getCopo() >= getTamCopo()) {
 
                 System.out.println("------------------");
                 System.out.println("Impossível encher, seu copo está cheio");
@@ -64,7 +68,7 @@ public class MaquinaRefri {
             }
         }else{
             System.out.println("------------------");
-            System.out.println("Quantidade de Xarope Insuficiente");
+            System.out.println("Quantidade de Insumos Insuficiente");
         }
     }
 

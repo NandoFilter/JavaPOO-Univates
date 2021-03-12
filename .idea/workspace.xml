@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d78465e6-dfd7-4cfb-a2c1-13d5d4df82d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MaquinaRefrigerante/MaquinaRefrigerante.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaquinaRefrigerante/src/MaquinaRefri.java" beforeDir="false" afterPath="$PROJECT_DIR$/MaquinaRefrigerante/src/MaquinaRefri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaquinaRefrigerante/src/ProgramaMaqRefri.java" beforeDir="false" afterPath="$PROJECT_DIR$/MaquinaRefrigerante/src/ProgramaMaqRefri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MaquinaRefrigerante/MaquinaRefri.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MaquinaRefrigerante/MaquinaRefri.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MaquinaRefrigerante/ProgramaMaqRefri.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MaquinaRefrigerante/ProgramaMaqRefri.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +142,7 @@
       <updated>1615043015206</updated>
       <workItem from="1615043016427" duration="1005000" />
       <workItem from="1615078731996" duration="468000" />
-      <workItem from="1615500944854" duration="10974000" />
+      <workItem from="1615500944854" duration="12776000" />
     </task>
     <servers />
   </component>
