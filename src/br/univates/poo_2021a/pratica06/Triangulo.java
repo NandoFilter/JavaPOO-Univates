@@ -29,11 +29,14 @@ public class Triangulo {
 
         while(p == 0) {
             if (getLadoA() >= (getLadoB() + getLadoC()) || getLadoA() <= (getLadoB() - getLadoC())) {
-                p = 0;
+                System.out.println("Valores inválidos");
+                break;
             }else if(getLadoB() >= (getLadoA() + getLadoC()) || getLadoB() <= (getLadoA() - getLadoC())){
-                p = 0;
+                System.out.println("Valores inválidos");
+                break;
             }else if(getLadoC() >= (getLadoA() + getLadoB()) || getLadoC() <= (getLadoA() - getLadoB())){
-                p = 0;
+                System.out.println("Valores inválidos");
+                break;
             }else{
                 p = getLadoA() + getLadoB() + getLadoC();
             }
