@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 public class Triangulo {
 
-    double ladoA, ladoB, ladoC;
+    private double ladoA, ladoB, ladoC;
 
     public Triangulo(){
         ladoA = 0;
@@ -20,8 +20,25 @@ public class Triangulo {
         ladoC = 0;
     }
 
+    /* Para construir um triângulo é necessário que a medida de
+    qualquer um dos lados seja menor que a soma das medidas dos outros
+    dois e maior que o valor absoluto da diferença entre essas medidas.*/
+
     public double calculaPerimetro(){
-        return (getLadoA() + getLadoB() + getLadoC());
+        double p = 0;
+
+        while(p == 0) {
+            if (getLadoA() >= (getLadoB() + getLadoC()) || getLadoA() <= (getLadoB() - getLadoC())) {
+                p = 0;
+            }else if(getLadoB() >= (getLadoA() + getLadoC()) || getLadoB() <= (getLadoA() - getLadoC())){
+                p = 0;
+            }else if(getLadoC() >= (getLadoA() + getLadoB()) || getLadoC() <= (getLadoA() - getLadoB())){
+                p = 0;
+            }else{
+                p = getLadoA() + getLadoB() + getLadoC();
+            }
+        }
+        return p;
     }
 
     public String calculaArea(){
