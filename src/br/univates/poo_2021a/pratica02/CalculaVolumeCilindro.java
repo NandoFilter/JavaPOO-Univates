@@ -1,4 +1,4 @@
-package br.univates.poo_2021a;
+package br.univates.poo_2021a.pratica02;
 
 import java.util.Scanner;
 
