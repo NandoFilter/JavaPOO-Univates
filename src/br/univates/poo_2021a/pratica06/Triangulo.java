@@ -14,10 +14,10 @@ public class Triangulo {
 
     private double ladoA, ladoB, ladoC;
 
-    public Triangulo(){
-        ladoA = 0;
-        ladoB = 0;
-        ladoC = 0;
+    public Triangulo(double x, double y, double z){
+        this.ladoA = x;
+        this.ladoB = y;
+        this.ladoC = z;
     }
 
     /* Para construir um triângulo é necessário que a medida de
