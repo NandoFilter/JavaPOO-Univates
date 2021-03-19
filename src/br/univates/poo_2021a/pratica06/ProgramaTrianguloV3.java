@@ -12,6 +12,7 @@ public class ProgramaTrianguloV3 {
 
         Triangulo t1 = new Triangulo(10, 10, 14);
 
+
         System.out.println("Perímetro: " + t1.calculaPerimetro() + "m");
         System.out.println("Área: " + t1.calculaArea() + "m²");
 

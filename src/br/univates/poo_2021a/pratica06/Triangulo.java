@@ -24,23 +24,34 @@ public class Triangulo {
     qualquer um dos lados seja menor que a soma das medidas dos outros
     dois e maior que o valor absoluto da diferença entre essas medidas.*/
 
+
+    public double getDiff(double n1, double n2){
+        return Math.max(n1, n2) - (Math.min(n1, n2));
+    }
+
+    public boolean validaTriangulo(){
+        boolean result = false;
+        if(getLadoA() > 0 && getLadoB() > 0 && getLadoC() > 0) {
+            if (getLadoA() < (getLadoB() + getLadoC())) {
+                if (getLadoB() < (getLadoA() + getLadoC())) {
+                    if (getLadoC() < (getLadoA() + getLadoB())) {
+                        if(getDiff(getLadoA(), getLadoC()) <= getDiff(getLadoA(), getLadoB()) + getDiff(getLadoB(), getLadoC())) {
+                            result = true;
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
     public double calculaPerimetro(){
         double p = 0;
 
-        while(p == 0) {
-            if (getLadoA() >= (getLadoB() + getLadoC()) || getLadoA() <= (getLadoB() - getLadoC())) {
-                System.out.println("Valores inválidos");
-                break;
-            }else if(getLadoB() >= (getLadoA() + getLadoC()) || getLadoB() <= (getLadoA() - getLadoC())){
-                System.out.println("Valores inválidos");
-                break;
-            }else if(getLadoC() >= (getLadoA() + getLadoB()) || getLadoC() <= (getLadoA() - getLadoB())){
-                System.out.println("Valores inválidos");
-                break;
-            }else{
-                p = getLadoA() + getLadoB() + getLadoC();
-            }
+        if(validaTriangulo()){
+            p = getLadoA() + getLadoB() + getLadoC();
         }
+
         return p;
     }
 
