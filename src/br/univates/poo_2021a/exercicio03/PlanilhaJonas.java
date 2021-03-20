@@ -43,13 +43,13 @@ public class PlanilhaJonas {
                     System.out.println("[" + (i + 1) + "] " + planilha.getAtleta()[i].getNome());
                 }
 
-                System.out.println("[0] Cancelar");
+                System.out.println("[4] Cancelar");
                 System.out.print("Digite aqui: ");
                 int x = scan.nextInt();
 
                 if (x < 0 || x > planilha.getAtleta().length) {
                     System.out.println("Error");
-                } else if (x == 0) {
+                } else if (x == 4) {
                     num = 0;
                 } else {
                     System.out.print("Informe o tempo que deseja adicionar: ");
@@ -77,19 +77,19 @@ public class PlanilhaJonas {
                     System.out.println("[" + (i + 1) + "] " + planilha.getAtleta()[i].getNome());
                 }
 
-                System.out.println("[0] Cancelar");
+                System.out.println("[4] Cancelar");
                 System.out.print("Digite aqui: ");
                 int x = scan.nextInt();
 
                 if (x < 0 || x > planilha.getAtleta().length) {
                     System.out.println("Error");
-                } else if (x == 0) {
+                } else if (x == 4) {
                     num = 0;
                 } else {
                     System.out.println("------ Atleta " + (x) +" ------");
-                    System.out.println("Nome: " + planilha.getAtleta()[x - 1].getNome());
+                    System.out.println("Nome: " + planilha.getAtleta()[x - 1].getNome().toUpperCase());
                     for (int i = 0; i < planilha.getAtleta()[x - 1].getTempo().length; i++) {
-                        System.out.println("Tempo na Volta " + (i + 1) + ": " + planilha.getAtleta()[x - 1].getTempo()[i]);
+                        System.out.printf("Tempo na Volta " + (i + 1) + ": %.2fs\n", planilha.getAtleta()[x - 1].getTempo()[i]);
                     }
                     System.out.printf("Média do Atleta: %.2fs\n", planilha.getAtleta()[x - 1].getMediaAtleta());
                     num = 0;

@@ -10,7 +10,7 @@ public class Planilha {
     private Atleta[] atleta;
 
     public Planilha(){
-        this.atleta = new Atleta[3];
+        this.atleta = new Atleta[15];
         for (int i = 0; i < atleta.length; i++) {
             atleta[i] = new Atleta();
         }
