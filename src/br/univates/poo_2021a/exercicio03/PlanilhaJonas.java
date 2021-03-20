@@ -64,7 +64,6 @@ public class PlanilhaJonas {
                     } else {
                         System.out.println("Error");
                     }
-
                 }
 
             // Resumo do Atleta
@@ -99,8 +98,6 @@ public class PlanilhaJonas {
             } else if (num == 3) {
                 System.out.println("\n------ RESUMO TOTAL ------");
 
-                // Média Total, Atletas < 10s, Volta mais Rápida e Volta mais Lenta
-
                 System.out.printf("Média dos Tempos: %.2fs\n", planilha.getMediaTempo());
 
                 System.out.printf("Volta mais Rápida: %.2fs\n", planilha.voltaMaisRapida());
@@ -126,7 +123,6 @@ public class PlanilhaJonas {
                 break;
             }
         }
-
     }
 
     public static int menu() {
