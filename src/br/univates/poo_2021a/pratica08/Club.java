@@ -42,7 +42,6 @@ public class Club {
         }else{
             valido = false;
         }
-
         return valido;
     }
 
@@ -57,7 +56,6 @@ public class Club {
         }else{
             valido = false;
         }
-
         return valido;
     }
 
@@ -71,7 +69,6 @@ public class Club {
         }else{
             valido = false;
         }
-
         return valido;
     }
 }

@@ -66,7 +66,6 @@ public class ProgramaClub {
                 break;
             }
         }
-
     }
 
     public static int menuClub() {
