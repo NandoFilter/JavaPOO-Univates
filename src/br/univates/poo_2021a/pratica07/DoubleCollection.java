@@ -23,6 +23,10 @@ public class DoubleCollection {
 
     public DoubleCollection(int x){
         numbers = new double[x];
+
+        for (int i = 0; i < getLength(); i++) {
+            numbers[i] = 0;
+        }
     }
 
     public int getLength(){
