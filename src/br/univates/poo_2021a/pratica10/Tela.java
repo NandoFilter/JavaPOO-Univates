@@ -8,46 +8,25 @@ import java.util.Scanner;
  */
 
 public class Tela {
-    public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+    Scanner scan = new Scanner(System.in);
 
-        Alambique alambique1 = new Alambique(100000, 500000, 100000);
-        Alambique alambique2 = new Alambique(500000, 1200000, 200000);
-        Alambique alambique3 = new Alambique(500000, 1200000, 200000);
+    private Alambique alambique;
 
-        Alambique alambique = new Alambique();
+    public Tela(Alambique alambique) {
+        this.alambique = alambique;
+    }
 
+    // Tela de Cada Alambique
+    public void showTela() {
         String menu = """
                 ------- TELA -------
-                [1] Selecionar Alambique
-                [2] Começar Produção
-                [3] Status Alambique
-                [4] Adicionar Caldo 
-                [5] Encher Garrafas
-                [6] Limpar Reservatórios 
-                [0] Cancelar""";
-
-        System.out.println("[Alambique 1] Comporta " + (alambique1.getReservaCach().getLimite() / 1000) + " litros de cachaça e " + (alambique1.getReservaCaldo().getLimite() / 1000) + " litros de cana");
-        System.out.println("[Alambique 2] Comporta " + (alambique2.getReservaCach().getLimite() / 1000) + " litros de cachaça e " + (alambique2.getReservaCaldo().getLimite() / 1000) + " litros de cana");
-        System.out.println("[Alambique 3] Comporta " + (alambique3.getReservaCach().getLimite() / 1000) + " litros de cachaça e " + (alambique3.getReservaCaldo().getLimite() / 1000) + " litros de cana");
-        System.out.print("Digite o alambique desejado: ");
-
-        while (true) {
-            int x = scan.nextInt();
-            if (x == 1) {
-                alambique = alambique1;
-                break;
-            } else if (x == 2) {
-                alambique = alambique2;
-                break;
-            } else if (x == 3) {
-                alambique = alambique3;
-                break;
-            } else {
-                System.out.println("----------------------\nValor indisponível! Adicione outro valor.");
-            }
-        }
+                [1] Começar Produção
+                [2] Status Alambique
+                [3] Adicionar Caldo 
+                [4] Encher Garrafas
+                [5] Limpar Reservatórios 
+                [0] Voltar""";
 
         while (true) {
             System.out.println(menu);
@@ -55,32 +34,6 @@ public class Tela {
             int x = scan.nextInt();
 
             if (x == 1) {
-                boolean acao = true;
-                while (acao) {
-                    System.out.println("\n---------------");
-                    System.out.println("[Alambique 1] Comporta " + (alambique1.getReservaCach().getLimite() / 1000) + " litros de cachaça e " + (alambique1.getReservaCaldo().getLimite() / 1000) + " litros de cana");
-                    System.out.println("[Alambique 2] Comporta " + (alambique2.getReservaCach().getLimite() / 1000) + " litros de cachaça e " + (alambique2.getReservaCaldo().getLimite() / 1000) + " litros de cana");
-                    System.out.println("[Alambique 3] Comporta " + (alambique3.getReservaCach().getLimite() / 1000) + " litros de cachaça e " + (alambique3.getReservaCaldo().getLimite() / 1000) + " litros de cana");
-                    System.out.println("[0] Voltar");
-                    System.out.print("Digite o alambique desejado: ");
-
-                    x = scan.nextInt();
-                    if (x == 1) {
-                        alambique = alambique1;
-                        acao = false;
-                    } else if (x == 2) {
-                        alambique = alambique2;
-                        acao = false;
-                    } else if (x == 3) {
-                        alambique = alambique3;
-                        acao = false;
-                    } else if (x == 0) {
-                        acao = false;
-                    } else {
-                        System.out.println("----------------------\nValor indisponível! Adicione outro valor.");
-                    }
-                }
-            } else if (x == 2) {
                 System.out.println("---------------");
 
                 if (alambique.startProd()) {
@@ -89,7 +42,7 @@ public class Tela {
                     System.out.println("Erro na Produção");
                 }
 
-            } else if (x == 3) {
+            } else if (x == 2) {
                 System.out.println("\n------- Quantidades -------");
                 System.out.println("Caldo de Cana: " + (alambique.getReservaCaldo().getQuantidade() / 1000) + "L");
                 System.out.println("Cachaça: " + (alambique.getReservaCach().getQuantidade() / 1000) + "L");
@@ -100,17 +53,28 @@ public class Tela {
 
                 System.out.println("---------------");
                 System.out.println("No total foram produzidas " + alambique.getGarrafasCheias() + " garrafas\n");
-            } else if (x == 4) {
-                System.out.println("---------------");
-                System.out.print("Quantidade que deseja adicionar em Litros: ");
-                double qntd = scan.nextDouble();
+            } else if (x == 3) {
 
-                alambique.getReservaCaldo().addQuantidade(qntd * 1000);
-            } else if (x == 5) {
+                boolean aux = true;
+
+                while(aux){
+                    System.out.println("---------------");
+                    System.out.print("Quantidade que deseja adicionar em Litros: ");
+                    double qntd = scan.nextDouble();
+
+                    if (qntd > 0 && ((qntd * 1000)+ alambique.getReservaCaldo().getQuantidade()) <= alambique.getReservaCaldo().getLimite()) {
+                        alambique.getReservaCaldo().addQuantidade(qntd * 1000);
+                        aux = false;
+                    } else {
+                        System.out.println("[Error] Valor inválido");
+                    }
+                }
+
+            } else if (x == 4) {
                 System.out.println("---------------");
                 alambique.encherGarrafa();
                 System.out.println("Garrafas enchidas com sucesso");
-            } else if (x == 6) {
+            } else if (x == 5) {
                 System.out.println("""
                         ------- LIMPAR -------
                         [1] Caldo de Cana
@@ -118,8 +82,8 @@ public class Tela {
                         [3] Resíduos
                         [0] Voltar""");
 
-                boolean acao = true;
-                while (acao) {
+                boolean result = true;
+                while (result) {
                     System.out.print("Digite aqui: ");
                     x = scan.nextInt();
 
@@ -129,9 +93,9 @@ public class Tela {
                         alambique.limparReservatorios(x);
                         System.out.println("---------------");
                         System.out.println("O Reservatório está limpo");
-                        acao = false;
+                        result = false;
                     } else if (x == 0) {
-                        acao = false;
+                        result = false;
                     } else {
                         System.out.println("----------------------\nValor indisponível! Adicione outro valor.");
                     }
@@ -139,7 +103,8 @@ public class Tela {
 
             } else if (x == 0) {
                 System.out.println("---------------");
-                System.out.println("Cancelando...");
+                System.out.println("Voltando...");
+                System.out.println("---------------");
                 break;
             }
         }
