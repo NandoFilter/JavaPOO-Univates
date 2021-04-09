@@ -60,4 +60,12 @@ public class Trem {
         return result;
     }
 
+    public double getTotalPeso(){
+        double result = 0;
+        for (int i = 0; i < getNumVagao(); i++) {
+            result += getVagao()[i].getCap();
+        }
+        return result;
+    }
+
 }

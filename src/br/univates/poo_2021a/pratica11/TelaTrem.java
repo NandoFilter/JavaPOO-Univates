@@ -105,6 +105,7 @@ public class TelaTrem {
                 System.out.println("Combustível Máximo: " + trem.getCombMax() + "L");
                 System.out.println("Combustível Atual: " + trem.getComb() + "L");
                 System.out.println("Odômetro: " + trem.getOdometro() + "km");
+                System.out.println("Peso do Trem: " + trem.getTotalPeso() + "t");
                 System.out.println("--------------");
 
                 for (int i = 0; i < trem.getNumVagao(); i++) {
