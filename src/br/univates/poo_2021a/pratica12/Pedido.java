@@ -1,6 +1,7 @@
 package br.univates.poo_2021a.pratica12;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
@@ -12,34 +13,28 @@ import java.util.ArrayList;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class Pedido {
-    /* Faça um sistema que ajude o proprietário a registrar
-    todos os pedidos que entram para serem atendidos. Cada pedido possui
-    a identificação do cliente (nome, endereço, telefone) e a lista de
-    todos os itens solicitados. Os pedidos ficam enfileirados e vão sendo
-    atendidos pela ordem em que foram recebidos. Os pedidos já atendidos
-    podem ser descartados. */
 
-    private int telCliente;
-    private String nomeCliente, endCliente, tipoPedido;
+    /* Cliente indicam o prato desejado (pizza grande, xis filé,
+    prato executivo, ala minuta), a quantidade (1, 2, 3 ou mais)
+    que desejam e podem fazer observações (sem cebola, sem salsa,
+    bem passado).  */
+
+    private int telCliente, tipoPedido;
+    private String nomeCliente, endCliente;
     private ArrayList<Prato> pratos;
 
-    public boolean addPrato(int pedido, int qntd, String obs) {
-        boolean result = false;
+    public void addPrato(int pedido, int qntd, String obs) {
         Prato prato = new Prato();
 
-        if (pedido > 0 && pedido < 5) {
-            selecionarPrato(pedido, prato);
-            prato.setQntdPrato(qntd);
-            prato.setObsPrato(obs);
-            pratos.add(prato);
-            result = true;
-        }
-
-        return result;
+        selecionarPrato(pedido, prato);
+        prato.setQntdPrato(qntd);
+        prato.setObsPrato(obs);
+        pratos.add(prato);
     }
 
-    public void addCliente(String nome, String endereco, String tipoPedido, int telefone){
+    public void addCliente(String nome, String endereco, int telefone, int tipoPedido) {
         setNomeCliente(nome);
         setEndCliente(endereco);
         setTelCliente(telefone);
