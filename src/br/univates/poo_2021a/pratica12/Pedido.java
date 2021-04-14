@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 @Getter
 @Setter
-@NoArgsConstructor
 public class Pedido {
 
     /* Cliente indicam o prato desejado (pizza grande, xis filé,
@@ -24,6 +23,10 @@ public class Pedido {
     private int telCliente, tipoPedido;
     private String nomeCliente, endCliente;
     private ArrayList<Prato> pratos;
+
+    public Pedido(){
+        this.pratos = new ArrayList<>();
+    }
 
     public void addPrato(int pedido, int qntd, String obs) {
         Prato prato = new Prato();
