@@ -45,7 +45,7 @@ public class TelaDelivery {
 
     public void showTela() {
         while (true) {
-            Pedido pedido = new Pedido();
+            Pedido prato = new Pedido();
             System.out.println("----- RESTAURANTE MAMMA JULIA -----");
 
             int tipoPedido = novoPedido();
@@ -62,16 +62,16 @@ public class TelaDelivery {
             String end = scan.next();
 
             System.out.print("Digite seu nº de telefone: ");
-            int telefone = scan.nextInt();
+            long telefone = scan.nextLong();
             scan.nextLine();
 
-            pedido.addCliente(nome, end, telefone, tipoPedido);
+            prato.addCliente(nome, end, telefone, tipoPedido);
 
             System.out.println("\n--------------------");
             System.out.println("Bem-vindo(a) " + nome + ", o que deseja?\n");
 
-            pedidos.add(adicionarPrato(pedido));
-            continuarPedido(pedido);
+            pedidos.add(adicionarPrato(prato));
+            continuarPedido(prato);
         }
     }
 
@@ -102,15 +102,15 @@ public class TelaDelivery {
         }
     }
 
-    public Pedido adicionarPrato(Pedido pedido) {
+    public Pedido adicionarPrato(Pedido prato) {
 
         while (true) {
             System.out.println(menuPratos);
             System.out.print("Digite aqui: ");
-            int prato = scan.nextInt();
+            int opcao = scan.nextInt();
             scan.nextLine();
 
-            if (prato > 0 && prato < 5) {
+            if (opcao > 0 && opcao < 5) {
                 System.out.print("Digite a quantidade desejada: ");
                 int qntd = scan.nextInt();
                 scan.nextLine();
@@ -118,18 +118,18 @@ public class TelaDelivery {
                 validarQuantidade(qntd);
 
                 System.out.print("\nAlguma observação? ");
-                String obs = scan.next();
+                String obs = scan.nextLine();
 
-                pedido.addPrato(prato, qntd, obs);
+                prato.addPrato(opcao, qntd, obs);
                 break;
             } else {
                 System.out.println("[!] Valor inválido\n");
             }
         }
-        return pedido;
+        return prato;
     }
 
-    public void continuarPedido(Pedido pedido) {
+    public void continuarPedido(Pedido prato) {
         while (true) {
             System.out.println("""
                     --------------------
@@ -138,19 +138,20 @@ public class TelaDelivery {
                     [2] Finalizar pedido
                     --------------------""");
             int z = 0;
-            try {
-                System.out.print("Digite aqui: ");
-                z = scan.nextInt();
-                scan.nextLine();
-            } catch (InputMismatchException e) {
-                System.out.println("[!] Erro");
-                scan.nextLine();
+            while(z == 0) {
+                try {
+                    System.out.print("Digite aqui: ");
+                    z = scan.nextInt();
+                    scan.nextLine();
+                } catch (InputMismatchException e) {
+                    scan.nextLine();
+                }
             }
 
             if (z == 1) {
-                pedidos.add(adicionarPrato(pedido));
+                pedidos.add(adicionarPrato(prato));
             } else if (z == 2) {
-                removePedido(pedido);
+                removePedido(prato);
                 System.out.println("--------------------");
                 System.out.println("Pedido finalizado!\n");
                 break;
@@ -160,19 +161,22 @@ public class TelaDelivery {
         }
     }
 
-    public String imprimirPedido(Pedido pedido) {
+    public String imprimirPedido(Pedido prato) {
         System.out.println("--------------------");
-        String lista = ("Cliente: " + pedido.getNomeCliente());
+        String lista = ("Cliente: " + prato.getNomeCliente() +
+                "\nEndereço: " + prato.getEndCliente() +
+                "\nTelefone: " + prato.getTelCliente() + "\n");
+
         for (int i = 0; i < pedidos.size(); i++) {
             lista += ("\nPrato: " + pedidos.get(i).getPratos().get(i).getNomePrato() +
                     "\nQuantidade: " + pedidos.get(i).getPratos().get(i).getQntdPrato() +
-                    "\nObservação: " + pedidos.get(i).getPratos().get(i).getObsPrato());
+                    "\nObservação: " + pedidos.get(i).getPratos().get(i).getObsPrato() + "\n");
         }
         return lista;
     }
 
-    public void removePedido(Pedido pedido) {
-        System.out.println(imprimirPedido(pedido));
+    public void removePedido(Pedido prato) {
+        System.out.println(imprimirPedido(prato));
         pedidos.remove(0);
     }
 

@@ -20,7 +20,8 @@ public class Pedido {
     que desejam e podem fazer observações (sem cebola, sem salsa,
     bem passado).  */
 
-    private int telCliente, tipoPedido;
+    private int tipoPedido;
+    private long telCliente;
     private String nomeCliente, endCliente;
     private ArrayList<Prato> pratos;
 
@@ -37,7 +38,7 @@ public class Pedido {
         pratos.add(prato);
     }
 
-    public void addCliente(String nome, String endereco, int telefone, int tipoPedido) {
+    public void addCliente(String nome, String endereco, long telefone, int tipoPedido) {
         setNomeCliente(nome);
         setEndCliente(endereco);
         setTelCliente(telefone);
