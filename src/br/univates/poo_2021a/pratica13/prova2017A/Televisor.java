@@ -18,14 +18,15 @@ public class Televisor {
     estado que pode ser ligado ou desligado (true or false). Criar os getters e
     setters necessários, o método construtor e encapsular os atributos (private). */
 
-    private int canal, volume, brilho, contraste;
+    private int canal, volume, brilho, contraste, volumeAux;
     private boolean ligado;
 
     public Televisor(){
         this.canal = 0;
-        this.volume = 0;
-        this.brilho = 0;
-        this.contraste = 0;
+        this.volume = 25;
+        this.brilho = 50;
+        this.contraste = 50;
+        this.volumeAux = 0;
         this.ligado = false;
     }
 
@@ -111,6 +112,7 @@ public class Televisor {
 
             if(getVolume() + 1 <= 100){
                 setVolume(getVolume() + 1);
+                setVolumeAux(getVolume());
                 aux = true;
             }
 
@@ -125,6 +127,7 @@ public class Televisor {
 
             if(getVolume() - 1 >= 0){
                 setVolume(getVolume() - 1);
+                setVolumeAux(getVolume());
                 aux = true;
             }
 
@@ -132,15 +135,15 @@ public class Televisor {
         return aux;
     }
 
+    // Deixar a TV no Mudo ou tirar do Mudo e retornar ao volume anterior
     public boolean muteButton(){
         boolean aux = false;
-        int vol = getVolume();
 
         if(isLigado()){
             if(getVolume() > 0){
                 setVolume(0);
             }else{
-                setVolume(vol);
+                setVolume(getVolumeAux());
             }
             aux = true;
         }
