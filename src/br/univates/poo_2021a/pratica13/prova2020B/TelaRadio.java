@@ -46,12 +46,16 @@ public class TelaRadio {
                 }
             }else if(opcao == 2){
                 menuEstacao();
+                System.out.println("Estação: " + radio.getEstacaoFM().getFreq());
             }else if(opcao == 3){
                 radio.mudarModoTransm();
+                System.out.println("Transmissão: " + radio.getEstacaoFM().getModoTransm());
             }else if(opcao == 4){
                 radio.aumentarVolume();
+                System.out.println("Volume: " + radio.getVolume());
             }else if(opcao == 5){
                 radio.diminuirVolume();
+                System.out.println("Volume: " + radio.getVolume());
             }else{
                 System.out.println("[!] Valor inválido");
             }
