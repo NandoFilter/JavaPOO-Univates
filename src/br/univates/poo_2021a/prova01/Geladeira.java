@@ -62,12 +62,13 @@ public class Geladeira {
 
     public boolean receberDoacao(int tipo, int qntdKg) {
         boolean result = false;
-        if (tipo == 1) {
+
+        if (tipo == 1) { // Perecíveis
             if (getQntdP() + getQntdNP() + qntdKg <= getCapacidade() && qntdKg > 0) {
                 setQntdP(getQntdP() + qntdKg);
                 result = true;
             }
-        } else if (tipo == 2) {
+        } else if (tipo == 2) { // Não Perecíveis
             if (getQntdNP() + getQntdP() + qntdKg <= getCapacidade() && qntdKg > 0) {
                 setQntdNP(getQntdNP() + qntdKg);
                 result = true;
@@ -78,12 +79,13 @@ public class Geladeira {
 
     public boolean consumirAlimentos(int tipo, int qntdKg) {
         boolean result = false;
-        if (tipo == 1) {
+
+        if (tipo == 1) { // Perecíveis
             if (getQntdP() - qntdKg >= 0 && qntdKg > 0) {
                 setQntdP(getQntdNP() - qntdKg);
                 result = true;
             }
-        } else if (tipo == 2) {
+        } else if (tipo == 2) { // Não Perecíveis
             if (getQntdNP() - qntdKg >= 0 && qntdKg > 0) {
                 setQntdNP(getQntdNP() - qntdKg);
                 result = true;

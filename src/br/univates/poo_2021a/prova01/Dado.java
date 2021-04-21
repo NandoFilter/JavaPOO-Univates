@@ -31,9 +31,7 @@ public class Dado {
     }
 
     public void setNumeroDado(int n) {
-        if (n >= 1 && n <= 6) {
-            this.numeroDado = n;
-        }
+        this.numeroDado = n;
     }
 
     public int getNumeroDado() {
@@ -53,9 +51,10 @@ public class Dado {
     }
 
     public void girarDado() {
-        setNumeroDado((int) (Math.random() * 6 + 1));
-        setLancamentos(getLancamentos() + 1);
+        setNumeroDado((int) (Math.random() * 6 + 1)); // Randomiza o Valor do Dado
+        setLancamentos(getLancamentos() + 1);         // Adiciona +1 em Lançamentos
 
+        // Adiciona +1 no vetor a cada vez que o Número Sorteado tem o mesmo valor que a posição do Laço
         for (int i = 0; i < getQntdVezesSorteado().length; i++) {
             if (getNumeroDado() == (i + 1)) {
                 getQntdVezesSorteado()[i]++;
