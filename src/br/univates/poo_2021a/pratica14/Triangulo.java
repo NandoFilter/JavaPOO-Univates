@@ -14,6 +14,12 @@ public class Triangulo implements FormaGeometrica{
 
     private double ladoA, ladoB, ladoC;
 
+    public Triangulo(double ladoA, double ladoB, double ladoC){
+        this.ladoA = ladoA;
+        this.ladoB = ladoB;
+        this.ladoC = ladoC;
+    }
+
     @Override
     public double getArea() {
         double sp = getPerimetro() / 2;

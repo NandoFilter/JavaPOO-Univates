@@ -14,6 +14,12 @@ public class Losango implements FormaGeometrica{
 
     private double diagonalMaior, diagonalMenor, lado;
 
+    public Losango(double diagonalMaior, double diagonalMenor, double lado){
+        this.diagonalMaior = diagonalMaior;
+        this.diagonalMenor = diagonalMenor;
+        this.lado = lado;
+    }
+
     @Override
     public double getArea() {
         double area = 0;

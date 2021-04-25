@@ -8,25 +8,14 @@ package br.univates.poo_2021a.pratica14;
 public class Teste {
     public static void main(String[] args) {
 
-        Retangulo r = new Retangulo();
-        Triangulo t = new Triangulo();
-        Circulo c = new Circulo();
-        Losango l = new Losango();
+        Retangulo r = new Retangulo(10, 10);
+        Triangulo t = new Triangulo(20, 20, 20);
+        Circulo c = new Circulo(20);
+        Losango l = new Losango(25, 15, 10);
 
-        r.setAltura(10);
-        r.setBase(10);
         System.out.println("Área Retângulo: " + r.getArea());
-
-        t.setLadoA(20);
-        t.setLadoB(20);
-        t.setLadoC(20);
         System.out.println("Área Triângulo: " + t.getArea());
-
-        c.setRaio(20);
         System.out.println("Área Circulo: " + c.getArea());
-
-        l.setDiagonalMaior(25);
-        l.setDiagonalMenor(15);
         System.out.println("Área Losango: " + l.getArea());
 
         System.out.println("\nÁrea entre duas formas geométricas: " + somarAreas(r, t, c, l));
