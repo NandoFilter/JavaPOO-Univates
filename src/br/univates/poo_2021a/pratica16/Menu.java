@@ -46,7 +46,6 @@ public class Menu {
         }
     }
 
-    // Main para teste
     public static void main(String[] args) {
         Pedido p = new Pedido();
         Menu menuP = new Menu(p);
