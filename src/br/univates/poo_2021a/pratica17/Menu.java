@@ -1,4 +1,4 @@
-package br.univates.poo_2021a.pratica16;
+package br.univates.poo_2021a.pratica17;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -46,6 +46,7 @@ public class Menu {
         }
     }
 
+    // Main para teste
     public static void main(String[] args) {
         Pedido p = new Pedido();
         Menu menuP = new Menu(p);
