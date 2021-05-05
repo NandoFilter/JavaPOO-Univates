@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * @author NandoFilter
@@ -22,30 +23,32 @@ public class Menu {
 
     private ArrayList<MenuConfig> itens;
 
-    public Menu() {
+    public Menu(MenuConfig menu) {
         itens = new ArrayList<>();
+        itens.add(menu); // Adicionando Menu no ArrayList
     }
 
-    public void addMenu(MenuConfig menu){
-        itens.add(menu);
-    }
-
-    public void gerarMenu(){
+    public void gerarMenu() {
         MenuConfig config = itens.remove(0); // Inicializar MenuConfig
+        Scanner scanner = new Scanner(System.in);
 
-        config.prepararMenu();
-        ArrayList<String> list = config.getProximaOpcao();
+        ArrayList<String> list = config.getListaOpcao(); // Opções do Menu
 
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
+        // Selecionar Opção do Menu
+        while(true) {
+            for (String listaOp : list) {
+                System.out.println(listaOp);
+            }
+
+            System.out.print("Digite aqui: ");
+            config.selecionarOpcao(scanner.nextInt());
+            System.out.println();
         }
     }
 
     public static void main(String[] args) {
         Pedido p = new Pedido();
-        Menu menu = new Menu();
-        menu.addMenu(p);
-
-        menu.gerarMenu();
+        Menu menuP = new Menu(p);
+        menuP.gerarMenu();
     }
 }
