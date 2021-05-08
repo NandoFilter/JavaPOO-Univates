@@ -15,9 +15,9 @@ public class ClienteMenu implements MenuConfig {
     private MaquinaSorvete ms;
     Scanner scanner = new Scanner(System.in);
 
-    public ClienteMenu() {
+    public ClienteMenu(MaquinaSorvete maquinaSorvete) {
         this.opcoes = new ArrayList<>();
-        this.ms = new MaquinaSorvete();
+        this.ms = maquinaSorvete;
     }
 
     @Override
@@ -26,10 +26,9 @@ public class ClienteMenu implements MenuConfig {
         opcoes.add("[1] Escolher Sabor");
         opcoes.add("[2] Comprar Bola de Sorvete");
         opcoes.add("[3] Comprar Litro de Sorvete");
-        opcoes.add("[0] Cancelar");
+        opcoes.add("[0] Voltar");
 
-        ArrayList<String> escolha = new ArrayList<>(opcoes); // Passa Lista de Opções em um ArrayList
-        return escolha;
+        return new ArrayList<>(opcoes);
     }
 
     @Override

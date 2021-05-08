@@ -12,19 +12,21 @@ import java.util.ArrayList;
 
 public class MaquinaMenu implements MenuConfig {
     private ArrayList<String> opcoes;
+    private MaquinaSorvete ms;
 
     public MaquinaMenu() {
         this.opcoes = new ArrayList<>();
+        this.ms = new MaquinaSorvete();
     }
 
     @Override
     public ArrayList<String> getListaOpcao() {
+        // Aqui se escreve as opções do Menu
         opcoes.add("[1] Cliente");
         opcoes.add("[2] Proprietário");
         opcoes.add("[0] Cancelar");
 
-        ArrayList<String> escolha = new ArrayList<>(opcoes); // Passa Lista de Opções em um ArrayList
-        return escolha;
+        return new ArrayList<>(opcoes);
     }
 
     @Override
@@ -32,14 +34,16 @@ public class MaquinaMenu implements MenuConfig {
         System.out.println("---------------");
         if (escolha == 1) {
             System.out.println("CLIENTE\n");
-
-            ClienteMenu cm = new ClienteMenu();
+            ClienteMenu cm = new ClienteMenu(ms);
 
             Menu menuCliente = new Menu(cm);
             menuCliente.gerarMenu();
-
         } else if (escolha == 2) {
-            System.out.println("Proprietário");
+            System.out.println("PROPRIETÁRIO\n");
+            PropMenu pm = new PropMenu(ms);
+
+            Menu menuProp = new Menu(pm);
+            menuProp.gerarMenu();
         } else {
             System.out.println("[!] Erro ao pedir");
         }

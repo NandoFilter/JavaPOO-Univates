@@ -23,12 +23,12 @@ public class MaquinaSorvete implements MaquinaInterface {
     private String sabor;
 
     public MaquinaSorvete() {
-        this.qntdLeite = 1000;
-        this.qntdEmul = 500;
-        this.qntdEsMor = 150;
-        this.qntdEsChoc = 150;
+        this.qntdLeite = 5000;
+        this.qntdEmul = 1000;
+        this.qntdEsMor = 500;
+        this.qntdEsChoc = 500;
         this.qntdBolasMor = 0;
-        this.qntdEsChoc = 0;
+        this.qntdBolasChoc = 0;
         this.sabor = "";
     }
 
@@ -108,21 +108,21 @@ public class MaquinaSorvete implements MaquinaInterface {
 
     @Override
     public void recarregarLeite() {
-        setQntdLeite(1000);
+        setQntdLeite(5000);
     }
 
     @Override
     public void recarregarEmul() {
-        setQntdEmul(500);
+        setQntdEmul(1000);
     }
 
     @Override
     public void recarregarEsMor() {
-        setQntdEsMor(150);
+        setQntdEsMor(500);
     }
 
     @Override
     public void recarregarEsChoc() {
-        setQntdEsChoc(150);
+        setQntdEsChoc(500);
     }
 }
