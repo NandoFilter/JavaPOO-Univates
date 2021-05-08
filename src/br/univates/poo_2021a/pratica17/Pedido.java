@@ -27,20 +27,20 @@ public class Pedido implements MenuConfig {
         pedidos.add("[3] Macarrão");
         pedidos.add("[0] Cancelar");
 
-        ArrayList<String> opcao = new ArrayList<>(pedidos); // Passa Lista de Opções em um ArrayList
-        return opcao;
+        ArrayList<String> escolha = new ArrayList<>(pedidos); // Passa Lista de Opções em um ArrayList
+        return escolha;
     }
 
     @Override
-    public void selecionarOpcao(int opcao) { // Execução após selecionar opção
+    public void selecionarOpcao(int escolha) { // Execução após selecionar opção
         System.out.println("---------------");
-        if (opcao == 1) {
+        if (escolha == 1) {
             System.out.println("Salada comprada");
-        } else if (opcao == 2) {
+        } else if (escolha == 2) {
             System.out.println("Costela comprada");
-        } else if (opcao == 3) {
+        } else if (escolha == 3) {
             System.out.println("Macarrão comprado");
-        } else if (opcao == 0) {
+        } else if (escolha == 0) {
             System.out.println("Finalizando...");
             System.exit(1);
         } else {

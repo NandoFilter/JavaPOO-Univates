@@ -4,5 +4,5 @@ import java.util.ArrayList;
 
 public interface MenuConfig {
     public ArrayList<String> getListaOpcao();
-    public void selecionarOpcao(int opcao);
+    public void selecionarOpcao(int escolha);
 }

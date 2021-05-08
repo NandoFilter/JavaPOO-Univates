@@ -41,15 +41,15 @@ public class Menu {
             }
 
             System.out.print("Digite aqui: ");
-            config.selecionarOpcao(scanner.nextInt());
-            System.out.println();
-        }
-    }
+            int x = scanner.nextInt();
+            scanner.nextLine();
 
-    // Main para teste
-    public static void main(String[] args) {
-        Pedido p = new Pedido();
-        Menu menuP = new Menu(p);
-        menuP.gerarMenu();
+            if(x > 0) {
+                config.selecionarOpcao(x);
+                System.out.println();
+            } else { // Cancelar Ação
+                break;
+            }
+        }
     }
 }
