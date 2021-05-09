@@ -71,7 +71,6 @@ public class MaquinaSorvete implements MaquinaInterface {
             }
 
         }
-
         return aux;
     }
 

@@ -14,9 +14,9 @@ public class MaquinaMenu implements MenuConfig {
     private ArrayList<String> opcoes;
     private MaquinaSorvete ms;
 
-    public MaquinaMenu() {
+    public MaquinaMenu(MaquinaSorvete maquinaSorvete) {
         this.opcoes = new ArrayList<>();
-        this.ms = new MaquinaSorvete();
+        this.ms = maquinaSorvete;
     }
 
     @Override

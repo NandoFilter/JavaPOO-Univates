@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @date 05/08/2021
  */
 
-/* deve ter uma interface que permita ao dono do estabelecimento recarregar os ingredientes.
+/* Deve ter uma interface que permita ao dono do estabelecimento recarregar os ingredientes.
 Ao final do expediente o proprietário quer saber quantas bolas de sorvete de cada tipo foram
 vendidas e poderá também querer saber o saldo existente de cada ingrediente */
 
