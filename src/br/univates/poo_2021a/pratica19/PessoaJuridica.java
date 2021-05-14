@@ -9,16 +9,16 @@ import java.util.ArrayList;
 
 public class PessoaJuridica extends Pessoa{
 
-    /* Crie uma classe para modelar uma Pessoa Jurídica, derivada de Pessoa,
-    com os atributos típicos de uma pessoa jurídica (uma empresa) como,
-    por exemplo, CNPJ, nome dos sócios, nome de fantasia, etc. */
+    /* 3) Crie uma classe para modelar uma Pessoa Jurídica, derivada de
+    Pessoa, com os atributos típicos de uma pessoa jurídica (uma empresa)
+    como, por exemplo, CNPJ, nome dos sócios, nome de fantasia, etc. */
 
-    private String CNPJ, nomeFantasia;
+    private String cnpj, nomeFantasia;
     private ArrayList<String> nomeSocios;
 
-    public PessoaJuridica(String nome, String endereco, String telefone, String CNPJ, String nomeFantasia) {
+    public PessoaJuridica(String nome, String endereco, String telefone, String cnpj, String nomeFantasia) {
         super(nome, endereco, telefone);
-        this.CNPJ = CNPJ;
+        this.cnpj = cnpj;
         this.nomeFantasia = nomeFantasia;
         this.nomeSocios = new ArrayList<>();
     }
