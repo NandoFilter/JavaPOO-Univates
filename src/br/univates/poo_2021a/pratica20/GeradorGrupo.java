@@ -56,6 +56,7 @@ public class GeradorGrupo extends Grupo {
         } else {
             System.out.println("Error");
         }
+        
         return aux;
     }
 
