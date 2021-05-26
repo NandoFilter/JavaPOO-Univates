@@ -32,6 +32,16 @@ public class MaquinaSorvete implements MaquinaInterface {
         this.sabor = "";
     }
 
+    public MaquinaSorvete(int qntdLeite, int qntdEmul, int qntdEsMor, int qntdEsChoc){
+        this.qntdLeite = qntdLeite;
+        this.qntdEmul = qntdEmul;
+        this.qntdEsMor = qntdEsMor;
+        this.qntdEsChoc = qntdEsChoc;
+        this.qntdBolasMor = 0;
+        this.qntdBolasChoc = 0;
+        this.sabor = "";
+    }
+
     public boolean escolherSabor(int opcao) {
         boolean aux = false;
 
