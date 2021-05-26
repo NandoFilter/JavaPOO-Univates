@@ -19,6 +19,11 @@ public class Retangulo implements FormaGeometrica{
         this.altura = altura;
     }
 
+    public Retangulo(){
+        this.base = 0;
+        this.altura = 0;
+    }
+
     @Override
     public double getArea() {
         return getBase() * getAltura();
