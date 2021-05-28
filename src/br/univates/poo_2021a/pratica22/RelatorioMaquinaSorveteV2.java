@@ -25,13 +25,13 @@ public class RelatorioMaquinaSorveteV2 {
         System.out.print("Leite Atual: " + ms.getQntdLeite() + " | Novo Valor: ");
         int leite = scanner.nextInt();
 
-        System.out.print("Emulsificante: " + ms.getQntdEmul() + " | Novo Valor: ");
+        System.out.print("Emulsificante Atual: " + ms.getQntdEmul() + " | Novo Valor: ");
         int emul = scanner.nextInt();
 
-        System.out.print("Estrato de Morango: " + ms.getQntdEsMor() + " | Novo Valor: ");
+        System.out.print("Extrato de Morango Atual: " + ms.getQntdEsMor() + " | Novo Valor: ");
         int esMor = scanner.nextInt();
 
-        System.out.print("Estrato de Chocolate: " + ms.getQntdEsChoc() + " | Novo Valor: ");
+        System.out.print("Extrato de Chocolate Atual: " + ms.getQntdEsChoc() + " | Novo Valor: ");
         int esChoc = scanner.nextInt();
 
         ms.setQntdLeite(leite);
