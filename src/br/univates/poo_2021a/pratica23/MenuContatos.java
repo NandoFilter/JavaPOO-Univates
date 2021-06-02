@@ -1,9 +1,6 @@
 package br.univates.poo_2021a.pratica23;
 
-import br.univates.poo_2021a.pratica17.Menu;
 import br.univates.poo_2021a.pratica17.MenuConfig;
-import br.univates.poo_2021a.pratica18.ClienteMenu;
-import br.univates.poo_2021a.pratica18.PropMenu;
 
 import java.util.ArrayList;
 
@@ -15,12 +12,12 @@ import java.util.ArrayList;
 public class MenuContatos implements MenuConfig {
     private ArrayList<String> opcoes;
     private CadastroContato cs;
-    private ImprimirContatos ic;
+    private OpcoesContatos oc;
 
-    public MenuContatos(){
+    public MenuContatos() {
         this.opcoes = new ArrayList<>();
         this.cs = new CadastroContato();
-        this.ic = new ImprimirContatos();
+        this.oc = new OpcoesContatos();
     }
 
     @Override
@@ -28,6 +25,8 @@ public class MenuContatos implements MenuConfig {
         // Aqui se escreve as opções do Menu
         opcoes.add("[1] Adicionar Contato");
         opcoes.add("[2] Listar Contatos");
+        opcoes.add("[3] Editar Contatos");
+        opcoes.add("[4] Excluir Contato");
         opcoes.add("[0] Cancelar");
 
         return new ArrayList<>(opcoes);
@@ -41,7 +40,14 @@ public class MenuContatos implements MenuConfig {
             System.out.println("---------------");
         } else if (escolha == 2) {
             System.out.println();
-            ic.imprimir();
+            oc.imprimir();
+            System.out.println("---------------");
+        } else if (escolha == 3) {
+            System.out.println();
+            oc.editar();
+            System.out.println("---------------");
+        } else if (escolha == 4) {
+            oc.excluir();
             System.out.println("---------------");
         } else {
             System.out.println("[!] Erro ao pedir");

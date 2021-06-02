@@ -9,30 +9,22 @@ import java.util.ArrayList;
  * @date 05/27/2021
  */
 
-public class ContatosDao {
+public class ContatosDao extends DaoEdit {
 
-    public void salvar(Contato contato) {
+    public boolean salvar(Contato contato) {
         Arquivo arq = new Arquivo("C:\\Programação\\Workspaces\\Univates\\JavaPOO-Univates\\src\\br\\univates\\poo_2021a\\pratica23\\contatos.txt");
-        ArrayList<Contato> contatosCad = new ArrayList<>();
+        ArrayList<Contato> contatosCad = ler();
+        contatosCad.add(contato);
+        boolean result = false;
 
-        if (arq.abrirLeitura()) {
-            String contatoSalvo = arq.lerLinha();
-
-            while (contatoSalvo != null) {
-                String[] vetorContato = contatoSalvo.split(";");
-                contatosCad.add(new Contato(vetorContato[0], vetorContato[1], vetorContato[2]));
-                contatoSalvo = arq.lerLinha();
+        if (arq.abrirEscrita()) {
+            for (Contato c : contatosCad) {
+                arq.escreverLinha(c.toString());
             }
-            contatosCad.add(contato);
-            arq.fecharArquivo();
-
-            if (arq.abrirEscrita()) {
-                for (Contato c : contatosCad) {
-                    arq.escreverLinha(c.toString());
-                }
-            }
-            arq.fecharArquivo();
+            result = true;
         }
+        arq.fecharArquivo();
+        return result;
     }
 
     public ArrayList<Contato> ler() {
@@ -48,7 +40,58 @@ public class ContatosDao {
                 contatoSalvo = arq.lerLinha();
             }
         }
+        arq.fecharArquivo();
         return contatosCad;
+    }
+
+    public boolean editar(int id, int opc, String info) {
+        Arquivo arq = new Arquivo("C:\\Programação\\Workspaces\\Univates\\JavaPOO-Univates\\src\\br\\univates\\poo_2021a\\pratica23\\contatos.txt");
+        ArrayList<Contato> contatosCad = ler();
+        boolean result = false;
+        id--;
+
+        if (arq.abrirLeitura()) {
+
+            if (validaOpcao(opc)) {
+                if (opc == 1) { // Editar Nome
+                    contatosCad.get(id).setNome(info);
+                } else if (opc == 2) { // Editar Telefone
+                    contatosCad.get(id).setTelefone(info);
+                } else if (opc == 3) { // Editar E-mail
+                    contatosCad.get(id).setEmail(info);
+                }
+            }
+        }
+        arq.fecharArquivo();
+
+        if (arq.abrirEscrita()) {
+            for (Contato c : contatosCad) {
+                arq.escreverLinha(c.toString());
+            }
+            result = true;
+        }
+        arq.fecharArquivo();
+        return result;
+    }
+
+    public boolean deletar(int id) {
+        boolean result = false;
+        Arquivo arq = new Arquivo("C:\\Programação\\Workspaces\\Univates\\JavaPOO-Univates\\src\\br\\univates\\poo_2021a\\pratica23\\contatos.txt");
+        ArrayList<Contato> contatosCad = ler();
+        id--;
+
+        if (id >= 0 && id < getContatosLength()) {
+            contatosCad.remove(id);
+        }
+
+        if (deletarContatos(arq) && arq.abrirEscrita()) {
+            for (Contato c : contatosCad) {
+                arq.escreverLinha(c.toString());
+            }
+            result = true;
+        }
+        arq.fecharArquivo();
+        return result;
     }
 
 }

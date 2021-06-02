@@ -1,6 +1,0 @@
-Jean;678;ccc
-Fernando;123;aaa
-Erik;456;ccc
-Augusto;999;ddd
-Lucas;777;eee
-Mariana;000;jjj

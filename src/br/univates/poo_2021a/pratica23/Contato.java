@@ -1,7 +1,6 @@
 package br.univates.poo_2021a.pratica23;
 
 import br.univates.poo_2021a.pratica16.Documento;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
