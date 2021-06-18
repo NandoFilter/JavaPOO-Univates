@@ -1,7 +1,9 @@
 package br.univates.poo_2021a.pratica23;
 
 import br.univates.poo_2021a.pratica17.MenuConfig;
+import br.univates.poo_2021a.pratica25.AddContato;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -11,12 +13,12 @@ import java.util.ArrayList;
 
 public class MenuContatos implements MenuConfig {
     private ArrayList<String> opcoes;
-    private CadastroContato cs;
+    private AddContato ac;
     private OpcoesContatos oc;
 
     public MenuContatos() {
         this.opcoes = new ArrayList<>();
-        this.cs = new CadastroContato();
+        this.ac = new AddContato();
         this.oc = new OpcoesContatos();
     }
 
@@ -36,8 +38,13 @@ public class MenuContatos implements MenuConfig {
     public void selecionarOpcao(int escolha) {
         System.out.println("---------------");
         if (escolha == 1) {
-            cs.salvarContatos();
-            System.out.println("---------------");
+
+            JFrame frame = new JFrame("AddContato");
+            frame.setContentPane(new AddContato().getter());
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            frame.pack();
+            frame.setVisible(true);
+
         } else if (escolha == 2) {
             System.out.println();
             oc.imprimir();
