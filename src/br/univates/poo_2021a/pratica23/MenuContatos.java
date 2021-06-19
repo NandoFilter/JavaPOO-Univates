@@ -13,12 +13,12 @@ import java.util.ArrayList;
 
 public class MenuContatos implements MenuConfig {
     private ArrayList<String> opcoes;
-    private AddContato ac;
+    private CadastroContato cc;
     private OpcoesContatos oc;
 
     public MenuContatos() {
         this.opcoes = new ArrayList<>();
-        this.ac = new AddContato();
+        this.cc = new CadastroContato();
         this.oc = new OpcoesContatos();
     }
 
@@ -38,13 +38,8 @@ public class MenuContatos implements MenuConfig {
     public void selecionarOpcao(int escolha) {
         System.out.println("---------------");
         if (escolha == 1) {
-
-            JFrame frame = new JFrame("AddContato");
-            frame.setContentPane(new AddContato().getter());
-            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            frame.pack();
-            frame.setVisible(true);
-
+            cc.salvarContatos();
+            System.out.println("---------------");
         } else if (escolha == 2) {
             System.out.println();
             oc.imprimir();

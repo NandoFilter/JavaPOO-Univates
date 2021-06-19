@@ -2,5 +2,3 @@ aaa;111;aaa
 bbb;222;bbb
 ccc;333;ccc
 ddd;444;ddd
-eee;555;eee
-fff;666;fff

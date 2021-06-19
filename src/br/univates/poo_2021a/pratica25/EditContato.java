@@ -129,7 +129,7 @@ public class EditContato extends JFrame {
         for (int i = 1; i <= qntdLinhas; i++) { // Adicionando ID no box
             boxID.addItem(i);
         }
-        
+
         loadInfoContato();
 
         boxID.addActionListener(new ActionListener() {
