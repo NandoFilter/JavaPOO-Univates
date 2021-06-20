@@ -44,6 +44,7 @@ public class ContatosDao extends DaoEdit {
         return contatosCad;
     }
 
+    // Usando na prática 25
     public boolean editar(int id, String infoNome, String infoTel, String infoEmail) {
         Arquivo arq = new Arquivo("C:\\Programação\\Workspaces\\Univates\\JavaPOO-Univates\\src\\br\\univates\\poo_2021a\\pratica23\\contatos.txt");
         ArrayList<Contato> contatosCad = ler();
@@ -65,6 +66,37 @@ public class ContatosDao extends DaoEdit {
             contatosCad.get(id).setNome(infoNome);
             contatosCad.get(id).setTelefone(infoTel);
             contatosCad.get(id).setEmail(infoEmail);
+        }
+        arq.fecharArquivo();
+
+        if (arq.abrirEscrita()) {
+            for (Contato c : contatosCad) {
+                arq.escreverLinha(c.toString());
+            }
+            result = true;
+        }
+        arq.fecharArquivo();
+        return result;
+    }
+
+    // Usando na Prática 23
+    public boolean editar(int id, int opc, String info) {
+        Arquivo arq = new Arquivo("C:\\Programação\\Workspaces\\Univates\\JavaPOO-Univates\\src\\br\\univates\\poo_2021a\\pratica23\\contatos.txt");
+        ArrayList<Contato> contatosCad = ler();
+        boolean result = false;
+        id--;
+
+        if (arq.abrirLeitura()) {
+
+            if (validaOpcao(opc)) {
+                if (opc == 1) { // Editar Nome
+                    contatosCad.get(id).setNome(info);
+                } else if (opc == 2) { // Editar Telefone
+                    contatosCad.get(id).setTelefone(info);
+                } else if (opc == 3) { // Editar E-mail
+                    contatosCad.get(id).setEmail(info);
+                }
+            }
         }
         arq.fecharArquivo();
 

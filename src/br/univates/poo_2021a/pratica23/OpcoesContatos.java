@@ -40,7 +40,7 @@ public class OpcoesContatos {
         System.out.print("\nInformação para alterar: ");
         String info = scanner.nextLine();
 
-        //contatosDao.editar(id, opc, info);
+        contatosDao.editar(id, opc, info);
 
     }
 
